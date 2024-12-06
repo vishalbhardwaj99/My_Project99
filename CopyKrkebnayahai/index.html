@@ -11,7 +11,7 @@
 <body>
     <div id="nav">
         <h3><b>CYBER</b>FICTION*</h3>
-        <button>APRIL,2023</button>
+        <button><span id="currentDate"></span></button>
     </div>
 
     <!--Main Container-->
@@ -88,5 +88,26 @@ PLAYGROUND
 
     <!--MyScript-->
     <script src="script.js"></script>
+
+    <script>
+        // Get the current date
+        const today = new Date();
+
+        // Array of month names
+        const months = [
+            'January', 'February', 'March', 'April', 'May', 'June', 
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+
+        // Get the month name and the day of the month
+        const monthName = months[today.getMonth()]; // getMonth() returns 0-11
+        const day = today.getDate(); // getDate() returns the day of the month
+
+        // Format the date as "Month Day" (e.g., "December 4")
+        const formattedDate = monthName + ' ' + day;
+
+        // Insert the formatted date into the HTML element with id "currentDate"
+        document.getElementById('currentDate').textContent = formattedDate;
+    </script>
 </body>
 </html>
